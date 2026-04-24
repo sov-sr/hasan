@@ -3,38 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر Elhasan | الرئيسية</title>
+    <title>Elhasan Chairs | متجر الكراسي الفاخرة</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">ELHASAN</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#products">المنتجات</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span id="cart-count" class="badge rounded-pill bg-danger">0</span>
-                        </a>
-                    </li>
-                </ul>
+            <a class="navbar-brand fw-bold" href="#">ELHASAN <i class="fas fa-chair"></i></a>
+            <div class="ms-auto">
+                <a class="nav-link text-white position-relative" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    <i class="fas fa-shopping-basket fa-lg"></i>
+                    <span id="cart-count" class="badge rounded-pill bg-warning text-dark">0</span>
+                </a>
             </div>
         </div>
     </nav>
 
     <header class="hero-section text-center text-white d-flex align-items-center">
         <div class="container">
-            <h1 class="display-3 fw-bold">مرحباً بكم في متجر Elhasan</h1>
-            <p class="lead">وجهتك الأولى للمنتجات التقنية الموثوقة مع دفع آمن</p>
+            <h1 class="display-4 fw-bold">فخامة الجلوس تبدأ من هنا</h1>
+            <p class="lead">تشكيلة حصرية من كراسي المكتب، الجيمنج، والراحة</p>
+        </div>
+    </header>
+
+    <section id="products" class="container my-5">
+        <h2 class="text-center mb-5">معرض الكراسي</h2>
+        <div class="row" id="product-container">
+            </div>
+    </section>
+
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title">إتمام الشراء</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>المنتجات المختارة:</h6>
+                    <div id="cart-items" class="mb-3"></div>
+                    <div class="d-flex justify-content-between fw-bold mb-4">
+                        <span>الإجمالي:</span>
+                        <span id="cart-total">0 $</span>
+                    </div>
+
+                    <div id="payment-form" class="p-3 border rounded bg-light">
+                        <label class="form-label">بيانات البطاقة الائتمانية</label>
+                        <input type="text" class="form-control mb-2" placeholder="رقم البطاقة (16 رقم)">
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" class="form-control" placeholder="MM/YY">
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control" placeholder="CVV">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary w-100" onclick="processPayment()">ادفع الآن بالبطاقة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 text-center">
+        <p>© 2026 متجر Elhasan للكراسي - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>            <p class="lead">وجهتك الأولى للمنتجات التقنية الموثوقة مع دفع آمن</p>
             <a href="#products" class="btn btn-primary btn-lg mt-3">تصفح المنتجات</a>
         </div>
     </header>
